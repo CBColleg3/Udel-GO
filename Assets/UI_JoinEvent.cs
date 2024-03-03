@@ -26,7 +26,7 @@ public class UI_JoinEvent : MonoBehaviour
 
     public void DisplayTooFarAwayUI(bool value)
     {
-        text.SetText("You're too far away... get closer to the stop!");
+        text.SetText("You're too far away... get closer!");
         uI_JoinEvent.SetActive(value);
     }
 }
