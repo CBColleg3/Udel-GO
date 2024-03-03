@@ -3,7 +3,13 @@ using System.Collections;
 
 public class TestLocationService : MonoBehaviour
 {
-    IEnumerator Start()
+
+    void Awake()
+    {
+        StartCoroutine(DoPermisions());
+    }
+
+    IEnumerator DoPermisions()
     {
         #if UNITY_ANDROID
                 if (!UnityEngine.Android.Permission.HasUserAuthorizedPermission(UnityEngine.Android.Permission.CoarseLocation))

@@ -40,7 +40,7 @@
 				var map = LocationProviderFactory.Instance.mapManager;
 				var locationWalking = new Vector2d(Input.location.lastData.latitude, Input.location.lastData.longitude);
 				//LocationProvider.CurrentLocation.LatitudeLongitude
-				transform.localPosition = map.GeoToWorldPosition(LocationProvider.CurrentLocation.LatitudeLongitude);
+				transform.localPosition = map.GeoToWorldPosition(locationWalking);
 			}
 		}
 	}

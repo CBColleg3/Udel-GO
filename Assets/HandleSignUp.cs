@@ -15,12 +15,14 @@ public class HandleSignUp : MonoBehaviour
     public TMP_InputField password;
     public PlayerData user;
 
+    [SerializeField] Button SignUpButton;
+
     void Start()
     {
         //outputArea = GameObject.Find("OutputArea").GetComponent<InputField>();
         user = new PlayerData();
         Debug.Log(GameObject.Find("SignUpButton"));
-        GameObject.Find("SignUpButton").GetComponent<Button>().onClick.AddListener(PostUser);
+        SignUpButton.onClick.AddListener(PostUser);
     }
 
     void PostUser() => StartCoroutine(PostUser_Coroutine());
