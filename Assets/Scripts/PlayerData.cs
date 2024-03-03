@@ -4,9 +4,8 @@ using UnityEngine;
 
 public class PlayerData
 {
-    public string plummie_tag;
-    public int collisions;
-    public int steps;
+    public string userName;
+    public string password;
     public string Stringify()
     {
         return JsonUtility.ToJson(this);

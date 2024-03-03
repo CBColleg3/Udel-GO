@@ -34,13 +34,13 @@
 
 		void LateUpdate()
 		{
-			Debug.Log("x: " + Input.location.lastData.latitude + ": y:  " + Input.location.lastData.longitude);
+			//Debug.Log("x: " + Input.location.lastData.latitude + ": y:  " + Input.location.lastData.longitude);
 			if (_isInitialized)
 			{
 				var map = LocationProviderFactory.Instance.mapManager;
 				var locationWalking = new Vector2d(Input.location.lastData.latitude, Input.location.lastData.longitude);
 				//LocationProvider.CurrentLocation.LatitudeLongitude
-				transform.localPosition = map.GeoToWorldPosition(locationWalking);
+				transform.localPosition = map.GeoToWorldPosition(LocationProvider.CurrentLocation.LatitudeLongitude);
 			}
 		}
 	}
