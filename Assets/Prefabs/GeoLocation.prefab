@@ -121,7 +121,7 @@ MonoBehaviour:
   rotateSpeed: 50
   amplitude: 4
   frequency: 2
-  yOffset: 70
+  yOffset: 14
   eventPos:
     x: 0
     y: 0
