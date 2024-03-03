@@ -6,6 +6,7 @@ public class PlayerData
 {
     public string userName;
     public string password;
+    public List<string> triviaSpots;
     public string Stringify()
     {
         return JsonUtility.ToJson(this);

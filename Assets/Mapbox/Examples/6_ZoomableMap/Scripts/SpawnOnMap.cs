@@ -15,6 +15,7 @@
 		[SerializeField]
 		[Geocode]
 		string[] _locationStrings;
+
 		Vector2d[] _locations;
 
 		[SerializeField]
@@ -25,21 +26,31 @@
 
 		List<GameObject> _spawnedObjects;
 
+
+		public List<string> triviaSpots;
+
 		void Start()
 		{
 			_locations = new Vector2d[_locationStrings.Length];
+			triviaSpots = new List<string>();
+			
 			_spawnedObjects = new List<GameObject>();
 			for (int i = 0; i < _locationStrings.Length; i++)
 			{
 				var locationString = _locationStrings[i];
-				_locations[i] = Conversions.StringToLatLon(locationString);
+				triviaSpots.Add(locationString);
+                _locations[i] = Conversions.StringToLatLon(locationString);
 				var instance = Instantiate(_markerPrefab);
 				instance.GetComponent<EventPointer>().eventPos = _locations[i];
 
 				instance.transform.localPosition = _map.GeoToWorldPosition(_locations[i], true);
 				instance.transform.localScale = new Vector3(_spawnScale, _spawnScale, _spawnScale);
 				_spawnedObjects.Add(instance);
-			}
+                Debug.Log("New Location " + _locations[i].ToString());
+                Debug.Log("trivia spot " + triviaSpots[i].ToString());
+
+
+            }
 		}
 
 		private void Update()
@@ -49,6 +60,7 @@
 			{
 				var spawnedObject = _spawnedObjects[i];
 				var location = _locations[i];
+				
 				spawnedObject.transform.localPosition = _map.GeoToWorldPosition(location, true);
 				spawnedObject.transform.localScale = new Vector3(_spawnScale, _spawnScale, _spawnScale);
 			}
