@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 7037186260990055083}
   - component: {fileID: 2598203081126097855}
   - component: {fileID: 2337517055615974490}
+  - component: {fileID: 5700508308834416239}
   m_Layer: 0
   m_Name: GeoLocation
   m_TagString: Untagged
@@ -32,7 +33,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 6
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!33 &7037186260990055083
 MeshFilter:
@@ -105,3 +106,22 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 1, y: 1, z: 1}
   m_Center: {x: 0, y: 0, z: 0}
+--- !u!114 &5700508308834416239
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3997633666302493303}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 854ad09c6ae538a40ae5b47e8eba13b7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  rotateSpeed: 50
+  amplitude: 4
+  frequency: 2
+  yOffset: 70
+  eventPos:
+    x: 0
+    y: 0
