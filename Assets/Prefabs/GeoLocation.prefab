@@ -125,3 +125,5 @@ MonoBehaviour:
   eventPos:
     x: 0
     y: 0
+  ui_jointEvent: {fileID: 0}
+  joinEventRadius: 20

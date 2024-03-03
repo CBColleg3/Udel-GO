@@ -14,6 +14,8 @@ public class EventPointer : MonoBehaviour
 
     LocationStatus playerLocation;
     public Vector2d eventPos;
+    [SerializeField] UI_JoinEvent ui_jointEvent;
+    [SerializeField] float joinEventRadius;
 
     private void Update()
     {
@@ -25,9 +27,20 @@ public class EventPointer : MonoBehaviour
     private void OnMouseDown()
     {
         playerLocation = GameObject.Find("Canvas").GetComponent<LocationStatus>();
+        ui_jointEvent = GameObject.Find("Canvas").GetComponentInChildren<UI_JoinEvent>();
+
         var curPlayerLocation = new GeoCoordinatePortable.GeoCoordinate(playerLocation.GetLocationLat(), playerLocation.GetLocationLong());
         var eventLocation = new GeoCoordinatePortable.GeoCoordinate(eventPos[0], eventPos[1]);
         var distance = curPlayerLocation.GetDistanceTo(eventLocation);
+
+
+        if(distance <= joinEventRadius)
+        {
+            ui_jointEvent.DisplayEventUI(true);
+        } else
+        {
+            ui_jointEvent.DisplayTooFarAwayUI(true);
+        }
 
 
         Debug.Log("Clicked on Event!");
